@@ -1,4 +1,4 @@
-# chat_app
+# ChatterHub
 
 A new Flutter project.
 
