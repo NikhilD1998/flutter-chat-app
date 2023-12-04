@@ -31,6 +31,11 @@ migrate_working_dir/
 .pub/
 /build/
 
+# Keystore files
+*.jks
+*.keystore
+
+
 # Symbolication related
 app.*.symbols
 
