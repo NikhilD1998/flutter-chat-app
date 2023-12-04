@@ -70,8 +70,8 @@ class MessageBubble extends StatelessWidget {
                   Container(
                     decoration: BoxDecoration(
                       color: isMe
-                          ? Colors.grey[300]
-                          : theme.colorScheme.secondary.withAlpha(200),
+                          ? const Color(0xFFFFD9B3)
+                          : const Color(0xFFFFD9DD),
                       borderRadius: BorderRadius.only(
                         topLeft: !isMe && isFirstInSequence
                             ? Radius.zero
@@ -94,12 +94,8 @@ class MessageBubble extends StatelessWidget {
                     ),
                     child: Text(
                       message,
-                      style: TextStyle(
-                        height: 1.3,
-                        color: isMe
-                            ? Colors.black87
-                            : theme.colorScheme.onSecondary,
-                      ),
+                      style:
+                          const TextStyle(height: 1.3, color: Colors.black87),
                       softWrap: true,
                     ),
                   ),

@@ -20,21 +20,23 @@ class App extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'FlutterChat',
       theme: ThemeData().copyWith(
         colorScheme: ColorScheme.fromSeed(
-            seedColor: const Color.fromARGB(255, 63, 17, 177)),
+          seedColor: const Color.fromARGB(1, 200, 175, 228),
+        ),
       ),
       home: StreamBuilder(
           stream: FirebaseAuth.instance.authStateChanges(),
           builder: (ctx, snapshot) {
             if (snapshot.connectionState == ConnectionState.waiting) {
-              return SplashScreen();
+              return const SplashScreen();
             }
             if (snapshot.hasData) {
-              return ChatScreen();
+              return const ChatScreen();
             }
-            return AuthScreen();
+            return const AuthScreen();
           }),
     );
   }

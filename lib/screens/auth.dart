@@ -1,3 +1,5 @@
+// ignore_for_file: use_build_context_synchronously
+
 import 'dart:io';
 
 import 'package:chat_app/widgets/user_image_picker.dart';
@@ -85,7 +87,7 @@ class _AuthScreenState extends State<AuthScreen> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Container(
-                margin: EdgeInsets.only(
+                margin: const EdgeInsets.only(
                   top: 30,
                   bottom: 20,
                   left: 20,
@@ -97,10 +99,10 @@ class _AuthScreenState extends State<AuthScreen> {
                 ),
               ),
               Card(
-                margin: EdgeInsets.all(20),
+                margin: const EdgeInsets.all(20),
                 child: SingleChildScrollView(
                   child: Padding(
-                    padding: EdgeInsets.all(16),
+                    padding: const EdgeInsets.all(16),
                     child: Form(
                       key: _form,
                       child: Column(
@@ -113,7 +115,7 @@ class _AuthScreenState extends State<AuthScreen> {
                               },
                             ),
                           TextFormField(
-                            decoration: InputDecoration(
+                            decoration: const InputDecoration(
                               labelText: 'Email Address',
                             ),
                             keyboardType: TextInputType.emailAddress,
@@ -134,7 +136,7 @@ class _AuthScreenState extends State<AuthScreen> {
                           ),
                           if (!_isLogin)
                             TextFormField(
-                              decoration: InputDecoration(
+                              decoration: const InputDecoration(
                                 labelText: 'Username',
                               ),
                               enableSuggestions: false,
@@ -151,7 +153,7 @@ class _AuthScreenState extends State<AuthScreen> {
                               },
                             ),
                           TextFormField(
-                            decoration: InputDecoration(
+                            decoration: const InputDecoration(
                               labelText: 'Password',
                             ),
                             obscureText: true,
@@ -165,10 +167,11 @@ class _AuthScreenState extends State<AuthScreen> {
                               _enteredPassword = value!;
                             },
                           ),
-                          SizedBox(
+                          const SizedBox(
                             height: 12,
                           ),
-                          if (_isAuthenticating) CircularProgressIndicator(),
+                          if (_isAuthenticating)
+                            const CircularProgressIndicator(),
                           if (!_isAuthenticating)
                             ElevatedButton(
                               onPressed: _submit,

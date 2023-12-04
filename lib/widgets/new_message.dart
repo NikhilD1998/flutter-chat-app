@@ -10,11 +10,10 @@ class NewMessage extends StatefulWidget {
 }
 
 class _NewMessageState extends State<NewMessage> {
-  var _messageController = TextEditingController();
+  final _messageController = TextEditingController();
 
   @override
   void dispose() {
-    // TODO: implement dispose
     super.dispose();
     _messageController.dispose();
   }
@@ -47,7 +46,7 @@ class _NewMessageState extends State<NewMessage> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.only(
+      padding: const EdgeInsets.only(
         left: 15,
         right: 1,
         bottom: 14,
@@ -60,12 +59,12 @@ class _NewMessageState extends State<NewMessage> {
               textCapitalization: TextCapitalization.sentences,
               autocorrect: true,
               enableSuggestions: true,
-              decoration: InputDecoration(labelText: 'Send a Message'),
+              decoration: const InputDecoration(labelText: 'Send a Message'),
             ),
           ),
           IconButton(
             onPressed: _submitMessage,
-            icon: Icon(Icons.send),
+            icon: const Icon(Icons.send),
             color: Theme.of(context).colorScheme.primary,
           )
         ],

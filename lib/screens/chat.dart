@@ -32,20 +32,25 @@ class _ChatScreenState extends State<ChatScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Flutter Chat'),
+        backgroundColor: const Color(0xFFE9FDFD),
+        title: Image.asset(
+          'assets/images/title.png',
+          width: 200,
+        ),
         actions: [
           IconButton(
             onPressed: () {
               FirebaseAuth.instance.signOut();
             },
-            icon: Icon(
+            icon: const Icon(
               Icons.exit_to_app,
-              color: Theme.of(context).colorScheme.primary,
+              color: Color(0xFFA060FF),
             ),
           )
         ],
       ),
-      body: Column(
+      backgroundColor: const Color(0xFFE9FDFD),
+      body: const Column(
         children: [
           Expanded(
             child: ChatMessages(),
